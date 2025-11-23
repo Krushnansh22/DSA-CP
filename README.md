@@ -64,7 +64,7 @@ Seven built-in categories:
 
 2. **Compile the project**
 ```bash
-   gcc -o calendar main.c calendar.c -std=c99
+   gcc -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
 ```
 
 3. **Run the application**
