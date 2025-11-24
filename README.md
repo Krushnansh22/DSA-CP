@@ -1,221 +1,362 @@
-# 📅 Console Calendar Manager
+# 📅 Calendar Manager Pro
 
-A feature-rich, console-based calendar management application built in C. This project demonstrates advanced data structures (linked lists), file I/O operations, and a beautiful command-line interface with color-coded output.
+A feature-rich, native Windows calendar application built in pure C using Win32 API. Manage your events efficiently with an intuitive GUI, persistent storage, and advanced features like recurring events, priorities, and reminders.
 
-## ✨ Features
+![Version](https://img.shields.io/badge/version-3.0-blue)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)
+![Language](https://img.shields.io/badge/language-C-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-### 📝 Event Management
-- **Add Events** with date, time, description, priority, and category
-- **Edit Events** - Modify description, priority, and category
-- **Delete Events** with confirmation prompts
-- **All-Day Events** support
-- **Unique ID System** for easy event tracking
+---
 
-### 🔍 Advanced Search & Filtering
-- **Today's Events** - Quick view of current day's schedule
-- **Upcoming Events** - View events for next N days
-- **Search by Keyword** - Case-insensitive search
-- **Filter by Month** - View all events in a specific month
-- **Filter by Category** - View events by type (Work, Personal, Birthday, etc.)
-- **Filter by Priority** - View HIGH, MEDIUM, or LOW priority events
-- **Date Range Search** - Find events between two dates
+## 🌟 Features
 
-### 🎨 Priority System
-- **HIGH Priority** (Red) - Urgent events
-- **MEDIUM Priority** (Yellow) - Important events
-- **LOW Priority** (Green) - Regular events
-- Automatic sorting by priority
+### Core Functionality
+- ✅ **Event Management**: Add, edit, delete events with ease
+- ✅ **Interactive Calendar**: Click dates to filter and view events
+- ✅ **Persistent Storage**: All data saved automatically in binary format
+- ✅ **Export to CSV**: Export your events to spreadsheet format
+- ✅ **Statistics Dashboard**: View event breakdown by priority and category
 
-### 🏷️ Category System
-Seven built-in categories:
-- 🔵 Work
-- 💜 Personal
-- 🔷 Birthday
-- 🟡 Meeting
-- 🟢 Appointment
-- 🔴 Reminder
-- ⚪ Other
+### Event Properties
+- 📅 **Date & Time**: Support for both timed and all-day events
+- 📍 **Location**: Add location information to events
+- ⚡ **Priorities**: Critical, High, Medium, Low
+- 🏷️ **Categories**: Work, Personal, Birthday, Meeting, Appointment, Reminder, Holiday, Other
+- 🔄 **Recurrence**: Daily, Weekly, Monthly, Yearly recurring events
+- ⏰ **Reminders**: Set custom reminder times (minutes before event)
 
-### 📊 Analytics & Export
-- **Statistics Dashboard** - View distribution by priority and category
-- **CSV Export** - Export calendar to Excel-compatible format
-- **Persistent Storage** - Binary file storage for fast loading
+### User Interface
+- 🎨 **Native Windows GUI**: Clean, professional interface using Win32 API
+- 📋 **Sortable List View**: View events in a detailed table format
+- 🗓️ **Month Calendar Widget**: Visual date selection
+- 📊 **Status Bar**: Real-time feedback on operations
+- 💬 **Confirmation Dialogs**: Safe operations with user confirmation
 
-### 🎨 Beautiful Interface
-- Color-coded priorities and categories
-- Clear visual separators
-- Intuitive menu navigation
-- Professional formatting
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- GCC Compiler (MinGW for Windows)
-- Terminal with ANSI color support (recommended: Windows Terminal, Git Bash, or modern Linux/Mac terminal)
+**Windows Operating System** with one of the following:
+- **MinGW-w64** (Recommended)
+- **MSYS2** with GCC
+- **TDM-GCC**
+- **Cygwin** with GCC
 
 ### Installation
 
-1. **Clone the repository**
+1. **Clone or Download** the repository:
 ```bash
-   git clone https://github.com/Harshvardhan770/DSA-CP.git
-   cd DSA-CP
+git clone https://github.com/Harshvardhan770/DSA-CP
+cd DSA-CP
 ```
 
-2. **Compile the project**
+2. **Compile** the application:
 ```bash
-   gcc -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
+gcc -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
 ```
 
-3. **Run the application**
-   
-   **Linux/Mac/Git Bash:**
+3. **Run** the application:
 ```bash
-   ./calendar
-```
-   
-   **Windows (CMD/PowerShell):**
-```cmd
-   calendar.exe
+.\calendar.exe
 ```
 
-## 📖 Usage
+Or simply **double-click** `calendar.exe` after compilation.
 
-### Main Menu Options
-```
-1.  Add New Event          - Create a new calendar event
-2.  View All Events        - Display all scheduled events
-3.  View Today's Events    - Show today's schedule
-4.  View Events by Month   - Filter by specific month
-5.  View Events by Category - Filter by event type
-6.  View Events by Priority - Filter by priority level
-7.  View Upcoming Events   - See events for next N days
-8.  Search by Keyword      - Find events by description
-9.  Search by Date Range   - Find events between dates
-10. Edit Event             - Modify existing event
-11. Delete Event           - Remove an event
-12. View Statistics        - See calendar analytics
-13. Export to CSV          - Export data to CSV file
-14. Save & Exit            - Save and close application
-```
+---
+
+## 📖 Usage Guide
 
 ### Adding an Event
 
-1. Select option `1` from the menu
-2. Enter date (validated for leap years and month days)
-3. Choose all-day or timed event
-4. Select priority level (HIGH/MEDIUM/LOW)
-5. Select category (Work/Personal/Birthday/etc.)
-6. Enter event description
+1. Click the **"➕ Add Event"** button
+2. Fill in the event details:
+   - **Description** (required): Brief description of the event
+   - **Location** (optional): Where the event takes place
+   - **All Day Event**: Check if event is all-day
+   - **Start Time**: Event start time (HH:MM format)
+   - **End Time**: Event end time (HH:MM format)
+   - **Priority**: Select priority level
+   - **Category**: Choose event category
+   - **Recurrence**: Set if event repeats
+   - **Reminder**: Optionally set reminder minutes before event
+3. Click **"Save Event"**
 
-### Example
-```
-Enter Day (1-31): 25
-Enter Month (1-12): 12
-Enter Year: 2025
+### Viewing Events
 
-Is this an all-day event? (1=Yes, 0=No): 0
-Enter Hour (24-hour format) (0-23): 14
-Enter Minute (0-59): 30
+- **View All Events**: Click "📋 View All" to see all events
+- **View Today's Events**: Click "📅 View Today" to see today's schedule
+- **Filter by Date**: Click any date on the calendar to view events for that day
+- **Scroll List**: Use the list view to browse through events
 
-Select Priority:
-  1. HIGH
-  2. MEDIUM
-  3. LOW
-Enter priority (1-3): 1
+### Deleting Events
 
-Select Category:
-  1. Work
-  2. Personal
-  3. Birthday
-  4. Meeting
-  5. Appointment
-  6. Reminder
-  7. Other
-Enter category (1-7): 4
+1. **Select** an event from the list
+2. Click **"🗑️ Delete Event"**
+3. **Confirm** deletion in the dialog
 
-Enter Event Description (max 99 chars): Team Sprint Planning Meeting
+### Exporting Data
 
-[OK] Event added successfully! ID: 1
-```
+1. Click **"💾 Export CSV"**
+2. Choose save location and filename
+3. Open the CSV file in Excel, Google Sheets, or any spreadsheet application
 
-## 🗂️ Project Structure
+### Viewing Statistics
+
+1. Click **"📊 Statistics"**
+2. View breakdown of:
+   - Total events
+   - All-day vs timed events
+   - Recurring events
+   - Events with reminders
+   - Priority distribution
+   - Category distribution
+
+---
+
+## 📁 File Structure
+
 ```
 DSA-CP/
-├── calendar.h          # Header file with structures and function declarations
-├── calendar.c          # Core implementation (linked list operations, file I/O)
-├── main.c              # Main program with menu and user interface
-├── calendar_data.bin   # Binary data file (auto-generated)
-└── README.md           # This file
+├── calendar_win32.c        # Main application source code
+├── calendar.exe            # Compiled executable (after build)
+├── calendar.dat            # Binary data file (auto-created)
+├── README.md               # This file
+└── LICENSE                 # License file
 ```
 
-## 🔧 Technical Details
+---
 
-### Data Structures
+## 🗂️ Data Storage
 
-**Event Structure:**
-```c
-typedef struct Event {
-    int id;                      // Unique identifier
-    Date event_date;             // Event date
-    Time event_time;             // Event time
-    char description[100];       // Event description
-    Priority priority;           // HIGH, MEDIUM, LOW
-    Category category;           // Event category
-    int is_all_day;             // All-day event flag
-    struct Event *next;         // Pointer to next event (linked list)
-} Event;
+### Binary Format (`calendar.dat`)
+
+The application stores events in a binary file format:
+
+```
+[Magic Number: 0xCAFEBABE]
+[Next ID Counter]
+[Event Count]
+[Event 1 Data]
+[Event 2 Data]
+...
 ```
 
-### Key Algorithms
+**Features:**
+- ✅ Automatic saving after every operation
+- ✅ Compact binary format for efficiency
+- ✅ Data integrity validation with magic number
+- ✅ Persistent across application restarts
 
-- **Sorted Insertion**: Events automatically sorted by date, time, and priority
-- **Binary File I/O**: Efficient storage and retrieval
-- **Leap Year Validation**: Accurate date validation
-- **Case-Insensitive Search**: Flexible keyword matching
+### CSV Export Format
 
-## 🎨 Terminal Compatibility
-
-### Recommended Terminals
-
-| Platform | Terminal | Colors | Unicode |
-|----------|----------|--------|---------|
-| Windows | Windows Terminal | ✅ | ✅ |
-| Windows | PowerShell 7 | ✅ | ✅ |
-| Windows | Git Bash | ✅ | ⚠️ Limited |
-| Linux | GNOME Terminal | ✅ | ✅ |
-| Linux | Konsole | ✅ | ✅ |
-| macOS | Terminal.app | ✅ | ✅ |
-| macOS | iTerm2 | ✅ | ✅ |
-
-## 📊 Sample Output
-```
-=============================================
-   WELCOME TO CALENDAR MANAGER PRO 2.0
-=============================================
-
-=== TODAY'S EVENTS (23/11/2025) ===
-
-ID: 1 | 14:30 | HIGH | Meeting
-Description: Team Sprint Planning Meeting
-
-ID: 2 | All Day | MEDIUM | Birthday
-Description: Mom's Birthday
-
-================================
+Exported CSV files contain:
+```csv
+ID,Date,Time,Description,Location,Priority,Category,Recurrence
+1,15/11/2024,09:00-10:00,"Team Meeting","Conference Room",High,Meeting,None
+2,20/11/2024,All Day,"Holiday","",Low,Holiday,None
 ```
 
-## 🛠️ Features Under Development
+---
 
-- [ ] Recurring events (daily, weekly, monthly)
-- [ ] Event reminders/notifications
+## 🎯 Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Tab` | Navigate between fields |
+| `Enter` | Save event (in Add Event dialog) |
+| `Escape` | Cancel (in Add Event dialog) |
+| `Click Date` | Filter events by date |
+
+---
+
+## 🛠️ Technical Details
+
+### Technologies Used
+- **Language**: Pure C (C99 standard)
+- **GUI Framework**: Win32 API
+- **Controls**: Common Controls Library (comctl32)
+- **Graphics**: GDI (gdi32)
+
+### System Requirements
+- **OS**: Windows 7 or later
+- **RAM**: 50 MB minimum
+- **Disk Space**: 5 MB
+- **Display**: 1024x768 or higher recommended
+
+### Architecture
+```
+┌─────────────────────────────────────┐
+│         Main Window                 │
+│  ┌──────────┐  ┌─────────────────┐ │
+│  │ Calendar │  │   Event List    │ │
+│  │  Widget  │  │   (ListView)    │ │
+│  └──────────┘  └─────────────────┘ │
+│  ┌────────────────────────────────┐│
+│  │    Action Buttons              ││
+│  └────────────────────────────────┘│
+│  ┌────────────────────────────────┐│
+│  │      Status Bar                ││
+│  └────────────────────────────────┘│
+└─────────────────────────────────────┘
+```
+
+---
+
+## 🔧 Compilation Options
+
+### Basic Compilation
+```bash
+gcc -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
+```
+
+### With Optimization
+```bash
+gcc -O2 -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
+```
+
+### Debug Build
+```bash
+gcc -g -o calendar_debug.exe calendar_win32.c -lcomctl32 -lgdi32
+```
+
+### Static Linking (Portable)
+```bash
+gcc -static -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
+```
+
+---
+
+## 📊 Event Priority Levels
+
+| Priority | Icon | Use Case |
+|----------|------|----------|
+| **Critical** | 🔴 | Urgent, cannot be missed |
+| **High** | 🟠 | Important, high priority |
+| **Medium** | 🟡 | Normal priority |
+| **Low** | 🟢 | Optional, low priority |
+
+---
+
+## 🏷️ Event Categories
+
+| Category | Icon | Description |
+|----------|------|-------------|
+| **Work** | 💼 | Work-related events |
+| **Personal** | 👤 | Personal appointments |
+| **Birthday** | 🎂 | Birthday celebrations |
+| **Meeting** | 🤝 | Team/client meetings |
+| **Appointment** | 📋 | Doctor, dentist, etc. |
+| **Reminder** | ⏰ | Task reminders |
+| **Holiday** | 🎉 | Holidays and vacations |
+| **Other** | 📌 | Miscellaneous events |
+
+---
+
+## 🔄 Recurrence Types
+
+- **None**: One-time event
+- **Daily**: Repeats every day
+- **Weekly**: Repeats every week
+- **Monthly**: Repeats on the same day each month
+- **Yearly**: Repeats annually
+
+---
+
+## 🐛 Troubleshooting
+
+### Application Won't Start
+- Ensure you have Windows 7 or later
+- Try running as Administrator
+- Check if `comctl32.dll` is present in System32
+
+### Events Not Saving
+- Check write permissions in application directory
+- Ensure sufficient disk space
+- Try running as Administrator
+
+### Compilation Errors
+
+**Error: `comctl32` not found**
+```bash
+# Install MinGW-w64 properly or use:
+gcc -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32 -L/mingw64/lib
+```
+
+**Error: Undefined reference to `WinMain`**
+```bash
+# Add -mwindows flag:
+gcc -o calendar.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
+```
+
+### Data File Corrupted
+- Delete `calendar.dat` to start fresh
+- Application will create new data file on next run
+- Consider keeping CSV exports as backups
+
+---
+
+## 💡 Tips & Best Practices
+
+1. **Regular Backups**: Export to CSV periodically
+2. **Use Categories**: Organize events by category for better filtering
+3. **Set Priorities**: Mark important events as High or Critical
+4. **Use Locations**: Add locations for better context
+5. **Recurring Events**: Use for regular meetings and appointments
+6. **Reminders**: Set reminders for critical events
+
+---
+
+## 🔮 Future Enhancements
+
+Potential features for future versions:
+- [ ] Search functionality
+- [ ] Event editing capability
+- [ ] Custom color themes
+- [ ] Week/Month view
+- [ ] Print calendar
+- [ ] Import from CSV/ICS
 - [ ] Multi-user support
-- [ ] Import from .ics files
-- [ ] GUI version
+- [ ] Cloud sync integration
+- [ ] Mobile companion app
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see below for details:
+
+```
+MIT License
+
+Copyright (c) 2024 Calendar Manager Pro
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+Contributions are welcome! To contribute:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -223,7 +364,39 @@ Contributions are welcome! Feel free to:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 👨‍💻 Author
+---
 
-**Harshvardhan**
-- GitHub: [@Harshvardhan770](https://github.com/Harshvardhan770)
+## 📧 Support & Contact
+
+- **Issues**: Report bugs via GitHub Issues
+- **Questions**: Open a discussion on GitHub
+  
+---
+
+## 🙏 Acknowledgments
+
+- Windows API documentation by Microsoft
+- MinGW-w64 project for GCC Windows support
+- Community contributors and testers
+
+---
+
+## 📚 Additional Resources
+
+### Useful Links
+- [Win32 API Documentation](https://docs.microsoft.com/en-us/windows/win32/)
+- [MinGW-w64 Downloads](https://www.mingw-w64.org/)
+- [C Programming Guide](https://en.cppreference.com/w/c)
+
+### Related Projects
+- [LibreOffice Calc](https://www.libreoffice.org/) - For viewing exported CSVs
+- [Windows Calendar](https://www.microsoft.com/en-us/windows) - Native Windows calendar
+
+---
+
+
+## ⭐ Star History
+
+If you find this project useful, please consider giving it a star on GitHub!
+
+---
