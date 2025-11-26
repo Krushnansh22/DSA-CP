@@ -595,22 +595,22 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                 LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
             
             // Create buttons
-            CreateWindow("BUTTON", "➕ Add Event", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
+            CreateWindow("BUTTON", "Add Event", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
                         20, 340, 140, 35, hwnd, (HMENU)ID_ADD_BTN, hInst, NULL);
             
-            CreateWindow("BUTTON", "🗑️ Delete Event", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
+            CreateWindow("BUTTON", "Delete Event", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
                         170, 340, 140, 35, hwnd, (HMENU)ID_DELETE_BTN, hInst, NULL);
             
-            CreateWindow("BUTTON", "📅 View Today", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
+            CreateWindow("BUTTON", "View Today", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
                         20, 385, 140, 35, hwnd, (HMENU)ID_VIEW_TODAY, hInst, NULL);
             
-            CreateWindow("BUTTON", "📋 View All", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
+            CreateWindow("BUTTON", "View All", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
                         170, 385, 140, 35, hwnd, (HMENU)ID_VIEW_ALL, hInst, NULL);
             
-            CreateWindow("BUTTON", "💾 Export CSV", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
+            CreateWindow("BUTTON", "Export CSV", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
                         20, 430, 140, 35, hwnd, (HMENU)ID_EXPORT, hInst, NULL);
             
-            CreateWindow("BUTTON", "📊 Statistics", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
+            CreateWindow("BUTTON", "Statistics", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
                         170, 430, 140, 35, hwnd, (HMENU)ID_STATS, hInst, NULL);
             
             // Create status bar
@@ -759,27 +759,27 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                     char stats[2000];
                     sprintf(stats, 
                            "═══════════════════════════════════════════\n"
-                           "        📊 CALENDAR STATISTICS 📊\n"
+                           "        CALENDAR STATISTICS"
                            "═══════════════════════════════════════════\n\n"
-                           "📅 OVERVIEW:\n"
+                           "   OVERVIEW:\n"
                            "   Total Events: %d\n"
                            "   All-Day Events: %d\n"
                            "   Recurring Events: %d\n"
                            "   Events with Reminders: %d\n\n"
-                           "⚡ PRIORITY DISTRIBUTION:\n"
-                           "   🔴 Critical: %d\n"
-                           "   🟠 High: %d\n"
-                           "   🟡 Medium: %d\n"
-                           "   🟢 Low: %d\n\n"
-                           "🏷️ CATEGORY DISTRIBUTION:\n"
-                           "   💼 Work: %d\n"
-                           "   👤 Personal: %d\n"
-                           "   🎂 Birthday: %d\n"
-                           "   🤝 Meeting: %d\n"
-                           "   📋 Appointment: %d\n"
-                           "   ⏰ Reminder: %d\n"
-                           "   🎉 Holiday: %d\n"
-                           "   📌 Other: %d\n"
+                           "PRIORITY DISTRIBUTION:\n"
+                           "   Critical: %d\n"
+                           "   High: %d\n"
+                           "   Medium: %d\n"
+                           "   Low: %d\n\n"
+                           "CATEGORY DISTRIBUTION:\n"
+                           "   Work: %d\n"
+                           "   Personal: %d\n"
+                           "   Birthday: %d\n"
+                           "   Meeting: %d\n"
+                           "   Appointment: %d\n"
+                           "   Reminder: %d\n"
+                           "   Holiday: %d\n"
+                           "   Other: %d\n"
                            "═══════════════════════════════════════════",
                            total, all_day, recurring, with_reminder,
                            priorities[PRIORITY_CRITICAL],
@@ -870,7 +870,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     hwndMain = CreateWindowEx(
         0,
         "CalendarManager",
-        "📅 Calendar Manager Pro - Windows Edition",
+        "  Calendar Manager Pro - Windows Edition",
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, 1200, 650,
         NULL, NULL, hInstance, NULL
