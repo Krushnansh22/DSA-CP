@@ -54,13 +54,13 @@ cd DSA-CP
 2. **Compile the Application**
 
 ```bash
-gcc -o calendar_enhanced.exe calendar_enhanced.c -mwindows -lcomctl32 -lgdi32
+gcc -o calendar_win32.exe calendar_win32.c -mwindows -lcomctl32 -lgdi32
 ```
 
 3. **Run the Application**
 
 ```bash
-.\calendar_enhanced.exe
+.\calendar_win32.exe
 ```
 
 ---
