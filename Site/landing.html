@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Manager Pro - The Native Windows Calendar</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a', /* Slate 900 */
+                            primary: '#1e40af', /* Blue 800 */
+                            accent: '#facc15', /* Yellow 400 */
+                            accentHover: '#eab308', /* Yellow 500 */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-brand-accent selection:text-brand-dark">
+
+    <nav class="w-full py-4 px-6 md:px-12 flex justify-between items-center fixed top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check text-brand-primary text-2xl"></i>
+            <span class="font-bold text-xl tracking-tight text-brand-dark">CalMan<span class="text-brand-primary">Pro</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 font-medium text-sm text-gray-600">
+            <a href="#features" class="hover:text-brand-primary transition">Features</a>
+            <a href="#showcase" class="hover:text-brand-primary transition">How It Works</a>
+            <a href="#specs" class="hover:text-brand-primary transition">Specs</a>
+        </div>
+        <a href="Calendar_Setup.zip" download class="bg-brand-primary hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition shadow-md text-sm">
+            Download v3.0
+        </a>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6 md:px-12 bg-gradient-to-br from-brand-dark via-slate-800 to-brand-primary text-white text-center overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <i class="fa-solid fa-code text-[20rem] absolute -top-20 -left-20"></i>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-block bg-blue-900/50 border border-blue-500/30 rounded-full px-4 py-1 mb-6 text-sm font-medium text-blue-200">
+                <i class="fa-brands fa-windows mr-2"></i> Native Win32 Application
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                The Lightning-Fast <br class="hidden md:block"/> Native Windows Calendar.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Built in <span class="text-white font-semibold">pure C</span> for unmatched performance. No cloud dependence, zero bloat. Your schedule stays securely on your machine.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
+                <a href="Calendar_Setup.zip" download class="bg-brand-accent hover:bg-brand-accentHover text-brand-dark text-lg font-bold py-4 px-8 rounded-lg shadow-[0_0_20px_rgba(250,204,21,0.4)] transition transform hover:-translate-y-1 flex items-center gap-3">
+                    <i class="fa-brands fa-windows text-xl"></i>
+                    Download Setup.exe
+                </a>
+                <span class="text-sm text-gray-400 block md:hidden">Free 30-day trial • No credit card</span>
+                <span class="text-sm text-gray-400 hidden md:block ml-2">v3.0 Enhanced • 64-bit</span>
+            </div>
+
+            <div class="relative mx-auto max-w-5xl rounded-xl shadow-2xl border border-gray-700 bg-slate-900 overflow-hidden transform md:rotate-1 hover:rotate-0 transition duration-700 group">
+                <div class="bg-slate-900 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="ml-4 text-xs text-gray-400 font-mono">Calendar Manager Pro - Enhanced</div>
+                </div>
+                
+                <div class="bg-slate-800">
+                    <img 
+                        src="Mainlanding.png" 
+                        alt="Calendar Manager Pro Main Dashboard" 
+                        class="w-full h-auto opacity-95 group-hover:opacity-100 transition duration-500"
+                    >
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="py-20 px-6 md:px-12 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Why Go Native?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Most modern calendars are just web browsers in disguise. We built differently.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-primary transition">
+                        <i class="fa-solid fa-rocket text-2xl text-brand-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark">Native Speed</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Built directly with the Win32 API. Launches instantly, uses &lt;10MB RAM, and never lags.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-primary transition">
+                        <i class="fa-solid fa-filter text-2xl text-brand-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark">Pro Organization</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Color-coded priorities, custom tags, and category filtering let you see what matters instantly.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-primary transition">
+                        <i class="fa-solid fa-magnifying-glass text-2xl text-brand-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark">Instant Search</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Find any event in milliseconds. Search by title, description, or date range in real-time.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-primary transition">
+                        <i class="fa-solid fa-database text-2xl text-brand-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark">Data Ownership</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Your data is stored locally in a secure binary format. No clouds, no subscriptions, no spying.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="py-24 px-6 md:px-12 bg-slate-50 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1 order-2 md:order-1 flex justify-center md:justify-end">
+                    <div class="relative max-w-md w-full">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-300 to-brand-primary rounded-lg blur opacity-25"></div>
+                        <img 
+                            src="AddEvent.png" 
+                            alt="Add Event Dialog Box" 
+                            class="relative rounded-lg shadow-2xl border border-gray-200 w-full h-auto bg-white"
+                        >
+                    </div>
+                </div>
+
+                <div class="flex-1 order-1 md:order-2">
+                    <div class="inline-block text-brand-primary font-bold text-sm tracking-wider uppercase mb-2">Efficiency First</div>
+                    <h3 class="text-3xl font-bold text-brand-dark mb-4">Keyboard Driven Workflow</h3>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Keep your hands on the keyboard. Press <code class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-300">Ctrl + N</code> to instantly pop the "Add Event" dialog. 
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Tab through fields, set priorities with hotkeys, and hit Enter. It's designed for speed, not just looks.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-700 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                            <i class="fa-solid fa-bolt text-yellow-500 mr-4 text-xl"></i> 
+                            <span>Instant load times (0.3s)</span>
+                        </li>
+                        <li class="flex items-center text-gray-700 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                            <i class="fa-solid fa-location-dot text-red-500 mr-4 text-xl"></i> 
+                            <span>Smart location auto-complete</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="specs" class="py-16 px-6 md:px-12 bg-white">
+        <div class="max-w-4xl mx-auto bg-slate-900 rounded-2xl p-8 md:p-12 text-center shadow-2xl">
+            <h2 class="text-2xl font-bold text-white mb-8">Technical Specifications</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <i class="fa-brands fa-windows text-3xl text-gray-400 mb-3"></i>
+                    <h4 class="text-white font-semibold">OS Support</h4>
+                    <p class="text-gray-400 text-sm">Win 7, 8, 10, 11</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-microchip text-3xl text-gray-400 mb-3"></i>
+                    <h4 class="text-white font-semibold">Architecture</h4>
+                    <p class="text-gray-400 text-sm">x86 & x64 Native</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-box-archive text-3xl text-gray-400 mb-3"></i>
+                    <h4 class="text-white font-semibold">Size</h4>
+                    <p class="text-gray-400 text-sm">&lt; 5MB Installer</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-link-slash text-3xl text-gray-400 mb-3"></i>
+                    <h4 class="text-white font-semibold">Dependencies</h4>
+                    <p class="text-gray-400 text-sm">None (Stand-alone)</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700">
+                <p class="text-gray-400 text-sm">
+                    Verified Clean by VirusTotal. No Adware. No Telemetry.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-brand-dark mb-6">Ready to take back control?</h2>
+            <p class="text-xl text-gray-600 mb-10">
+                Stop waiting for your calendar to load. Download the Enhanced Edition today.
+            </p>
+            
+            <a href="Calendar_Setup.zip" download class="bg-brand-accent hover:bg-brand-accentHover text-brand-dark text-xl font-bold py-5 px-10 rounded-lg shadow-lg transition transform hover:-translate-y-1 inline-flex items-center gap-3">
+                <i class="fa-solid fa-download"></i>
+                Download for Windows
+            </a>
+            <p class="mt-4 text-sm text-gray-500">Version 3.0 • Calendar_Setup.zip • 4.2MB</p>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-gray-400 py-12 px-6 md:px-12 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm">
+                &copy; 2024 Calendar Manager Pro. All rights reserved.
+            </div>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Contact Support</a>
+                <a href="https://github.com/Harshvardhan770/DSA-CP" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-8 text-center md:text-left text-xs text-gray-600">
+            "Windows" is a trademark of Microsoft Corporation. This application is not affiliated with Microsoft.
+        </div>
+    </footer>
+
+</body>
+</html>
